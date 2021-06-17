@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+        <TextView
+                android:id="@+id/txt_page_no"
+                android:text="Page 1"
+                android:gravity="left"
+                style="@style/DialtactsDialpadButtonStyle"/>
+        <TextView
+                android:id="@+id/txt_ptt"
+                android:text="PTT"
+                android:gravity="right"
+                style="@style/DialtactsDialpadButtonStyle"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <TextView
+            android:text="KEY LOCK"
+            android:textAlignment="center"
+            android:gravity="center"
+            style="@style/DialtactsDialpadButtonStyle"/>
+
+    </TableRow>
+
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+    </TableRow>
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+    </TableRow>
+
+
+</TableLayout>

@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file('..\\poc.jks')
+            storePassword 'poc123456'
+            keyAlias 'poc'
+            keyPassword 'poc123456'
+        }
+    }
+    compileSdkVersion 25
+    buildToolsVersion "30.0.3"
+    useLibrary  'org.apache.http.legacy' // 需要去除
+    defaultConfig {
+        applicationId "com.csipsimple"
+        minSdkVersion 21
+        targetSdkVersion 25
+        ndk {
+            abiFilters 'armeabi-v7a', 'armeabi','x86'
+        }
+        signingConfig signingConfigs.debug
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.debug
+        }
+
+        sourceSets.main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: "libs", include: ["*.jar"])
+    compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+    //noinspection GradleCompatible
+    compile 'com.android.support:support-v4:21.0.+'
+    compile files('libs/display.jar')
+
+}
